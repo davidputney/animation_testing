@@ -7,28 +7,26 @@ var pageFunctions = {
       // self.scrollFreeze(true);
 
       var sectionHeight = document.querySelector('#section-1').offsetHeight;
-      var sectionHeight2 = document.querySelector('#section-2').offsetHeight;
+      // var sectionHeight2 = document.querySelector('#section-2').offsetHeight;
+
+      var tween = new TimelineMax()
+        .to('#my-sticky-element', 0.8, {scale: 2.5, opacity: 0})
+        .to('#hero-logo', 0.95, {y:-400}, "-=0.15");
+
 
       var controller = new ScrollMagic.Controller();
       var scene = new ScrollMagic.Scene({
         triggerElement: '#section-1', // starting scene, when reaching this element
         triggerHook: 'onLeave',
-        duration: sectionHeight + (sectionHeight / 2)// pin the element for a total of 400px
+        duration: sectionHeight / 4 // pin the element for a total of 400px
       })
       .setPin('#section-1') // the element we want to pin
-      .setTween('#my-sticky-element', 0.5, {backgroundColor: "green", scale: 2.5, opacity: 0}); // trigger a TweenMax.to tween
-
-      var scene2 = new ScrollMagic.Scene({
-        triggerElement: '#my-sticky-element-2', // starting scene, when reaching this element
-        triggerHook: 'onLeave',
-        duration: sectionHeight2 - 250// pin the element for a total of 400px
-      });
-      // scene2.setTween(tween)
+      .setTween(tween);
 
 
       controller.addScene([
-        scene,
-        scene2,
+        scene
+        // scene2,
       ]);
 
 
