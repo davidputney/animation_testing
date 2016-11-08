@@ -71,21 +71,14 @@
   display:block;
   padding-top:75vh;
 }
-.image {
-  width:auto;
-  height:75vh;
-  position:absolute;
-  margin:0 auto;
-  left:-50%;
-  right:-50%;
-  top:0;
-}
-
-
 .block {
   width:100vw;
   height:100vh;
 }
+// .anim-section {
+//   border:1px solid red;
+//   height:100vh;
+// }
 .fader {
   width:100vw;
   height:105vh;
@@ -96,18 +89,20 @@
   background-position: center center;
   will-change:opacity, transform;
   background-repeat: no-repeat;
+  // display:none;
 }
-.button {
-  display: inline-block;
-  padding: 0.5em 1em;
-  margin: auto;
-  font-size: 2vw;
-  color: white;
-  text-align: center;
-  border-radius: .25em;
-  box-shadow: 0 0 0.5em rgba(0,0,0,0.4);
-  border: 2px solid darken(#3883d8, 10%);
-  text-decoration: none;
+// .button {
+//   display: inline-block;
+//   padding: 0.5em 1em;
+//   margin: auto;
+//   font-size: 2vw;
+//   color: white;
+//   text-align: center;
+//   border-radius: .25em;
+//   box-shadow: 0 0 0.5em rgba(0,0,0,0.4);
+//   border: 2px solid darken(#3883d8, 10%);
+//   text-decoration: none;
+// }
 }
 .hero-logo {
   position: absolute;
