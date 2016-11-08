@@ -23,10 +23,44 @@ var pageFunctions = {
       .setPin('#section-1') // the element we want to pin
       .setTween(tween);
 
+      var tweenTwo = new TimelineMax()
+        .to('#face-1-list', 0.2, {opacity:1,ease:Power1.easeInOut})
+        .set("#watch-anim-face", {className:"+=face-1"})
+        .to('#watch-anim-image', 0.2, {rotation:10,ease:Power1.easeInOut}, "+=0.03")
+
+
+        // .from('#watch-anim-image', 0.01, {rotation: 0})
+        .set("#watch-anim-face", {className:"-=face-1"})
+        .set("#watch-anim-face", {className:"+=face-2"})
+        .to('#face-2-list', 0.2, {opacity:1,ease:Power1.easeInOut}, "-=0.03")
+        .to('#watch-anim-image', 0.2, {rotation:0,ease:Power1.easeInOut}, "+=0.03")
+
+        .set("#watch-anim-face", {className:"-=face-2"})
+        .set("#watch-anim-face", {className:"+=face-3"})
+        .to('#face-3-list', 0.2, {opacity:1,ease:Power1.easeInOut}, "-=0.03")
+        .to('#watch-anim-image', 0.2, {rotation:-10,ease:Power1.easeInOut}, "+=0.03")
+
+
+        .set("#watch-anim-face", {className:"-=face-3"})
+        .set("#watch-anim-face", {className:"+=face-4"})
+        .to('#face-4-list', 0.2, {opacity:1,ease:Power1.easeInOut}, "-=0.03")
+        .to('#watch-anim-image', 0.2, {rotation:-20,ease:Power1.easeInOut});
+
+
+      var sceneTwo = new ScrollMagic.Scene({
+        triggerElement: '#section-3',
+        triggerHook: 'onLeave',
+        duration: sectionHeightTwo,
+        reverse:true
+      })
+      .setPin('#section-3')
+      .setTween(tweenTwo);
+
 
       controller.addScene([
         scene
         // scene2,
+        sceneTwo
       ]);
 
 
