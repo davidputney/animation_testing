@@ -4,21 +4,26 @@ var pageFunctions = {
       console.log('works');
       var self=this;
       this.intializeWatchers(); //listens for clicks
-      // self.scrollFreeze(true);
+      self.imagePreload();
 
-      var sectionHeight = document.querySelector('#section-1').offsetHeight;
+      var sectionHeight = document.querySelector('#anim-section').offsetHeight;
+
+      var sectionHeightTwo = document.querySelector('#section-3').offsetHeight;
       // var sectionHeight2 = document.querySelector('#section-2').offsetHeight;
 
       var tween = new TimelineMax()
         .to('#my-sticky-element', 0.8, {scale: 2.5, opacity: 0})
-        .to('#hero-logo', 0.95, {y:-400}, "-=0.15");
-
+        .to('#hero-logo', 0.95, {y:0, ease:Back.easeOut.config(1)}, "-=0.15")
+        .from('#hero-text', 0.95, {opacity:0, y:60}, "-=0.25")
+        .to('#hero-text', 0.95, {opacity:1, y:0, ease:Power1.easeOut})
+        .set("#section-1", {className:"+=active"}, "-=2");
 
       var controller = new ScrollMagic.Controller();
       var scene = new ScrollMagic.Scene({
-        triggerElement: '#section-1', // starting scene, when reaching this element
+        triggerElement: '#section-1',
         triggerHook: 'onLeave',
-        duration: sectionHeight / 4 // pin the element for a total of 400px
+        duration: sectionHeight / 2,
+        reverse:true
       })
       .setPin('#section-1') // the element we want to pin
       .setTween(tween);
@@ -58,17 +63,29 @@ var pageFunctions = {
 
 
       controller.addScene([
-        scene
-        // scene2,
+        scene,
         sceneTwo
       ]);
 
 
 
     },
-    intializeWatchers: function () {
+    intializeWatchers: function() {
       var self=this;
 
+
+    },
+    imagePreload: function() {
+      var self=this;
+				img1 = new Image();
+				img2 = new Image();
+				img3 = new Image();
+        img4 = new Image();
+
+				img1.src = "/siteart/bg_watch_face_one.png";
+				img2.src = "/siteart/bg_watch_face_two.png";
+				img3.src = "/siteart/bg_watch_face_three.png";
+      	img4.src = "/siteart/bg_watch_face_four.png";
     },
     getElemDistance: function ( elem ) {
       var location = 0;
