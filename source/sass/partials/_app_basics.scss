@@ -27,12 +27,27 @@
   display:block
 }
 .hidden {
-  width:0;
-  height:0;
-  overflow:hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
   position: absolute;
-  left:-1000000px;
+  white-space: nowrap;
+  width: 1px;
+  // Allow element to be focusable when navigated to via the keyboard:
+  // https://www.drupal.org/node/897638
+  &:focus {
+      clip: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      position: static;
+      width: auto;
+  }
 }
+
 .main {
   border:1px solid transparent;
   // margin-top:50px;
