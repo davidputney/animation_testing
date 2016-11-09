@@ -75,44 +75,23 @@
   width:100vw;
   height:100vh;
 }
-// .anim-section {
-//   border:1px solid red;
-//   height:100vh;
-// }
 .fader {
   width:100vw;
   height:105vh;
   position: absolute;
   z-index: 2;
-  // border:3px solid green;
   background-color: transparent;
   background-image: url('/siteart/watch_apps.svg');
   background-size: auto 105vh;
   background-position: center center;
   will-change:opacity, transform;
   background-repeat: no-repeat;
-  // display:none;
 }
-// .button {
-//   display: inline-block;
-//   padding: 0.5em 1em;
-//   margin: auto;
-//   font-size: 2vw;
-//   color: white;
-//   text-align: center;
-//   border-radius: .25em;
-//   box-shadow: 0 0 0.5em rgba(0,0,0,0.4);
-//   border: 2px solid darken(#3883d8, 10%);
-//   text-decoration: none;
-// }
 .e-case-study-header {
   padding:rem(50) 0;
-
 }
 .hero-logo {
-  // position: absolute;
   margin:0 auto;
-  // top:60%;
   transform: translateY(39vh);
   transition-property: transform;
   transition-timing-function: ease-in-out;
@@ -125,11 +104,8 @@
   height:140vh;
   background-repeat: no-repeat;
   background-position: bottom;
-  // background-size: cover;
   background-size: 100% auto;
   background-color: #eff3f4;
-  // min-height:100vh;
-  // padding-bottom:120vh !important;
   background-image: url('/siteart/bg_empower_hero_cropped.jpg');
   overflow:hidden;
   &:after {
@@ -153,21 +129,16 @@
 .anim-section {
     position: relative;
     z-index: 2;
-    // height:80vh;
     padding:0;
-    // position: absolute;
-    // top:0;
     background-repeat: no-repeat;
     background-position: top center, top center;
     background-size: cover, cover;
 }
 .hero-text-hidden {
   transition-timing-function: ease-out;
-  // opacity:0;
 }
 .watch-anim-section {
   height:100vh;
-  border: 1px solid red;
 }
 .watch-anim-wrapper {
   display:flex;
