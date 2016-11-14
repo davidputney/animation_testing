@@ -2,84 +2,40 @@
 <!doctype html>
 <html class="no-js" lang="">
     @@include('../html_partials/common/head.html')
-    <body class="page-case-study-redux">
+    <body id="empower-body" class="page-case-study-redux">
+
+      <div class="svg-sprite"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        @@include("../svg/svgsprite.svg")
+      </div>
+
         <!-- Add your site or application content here -->
-        <main class="main">
-
-          <section id="section-1" class="hero-section">
-            <div id="anim-section" class="anim-section">
-                <div id="my-sticky-element" class="fader"></div>
-
-          <header class="e-case-study-header">
-              <img id="hero-logo" class="hero-logo" src="/siteart/logo_empower_hero.svg" />
-          </header>
-
-            <div id="hero-text" class="inner-wrapper hero-text-hidden">
-              <h2>Apple Watch App</h2>
-              <p class="description">
-                Getting people to think saving for retirement is a significant challenge for plan sponsors across industries. Motivating people to actively engage in their retirement savings plan? That’s a whole different issue. How did we solve that challenge?
-              </p>
-              <p>
-                Empower Retirement (Empower) provides retirement services to companies of every size, from the small to mid, and the large to the mega plan. Empower is the second-largest retirement services provider in the country with over 8 million participants on its platform.
-              </p>
-              <p>
-                Their primary mission goes back to its namesake: empowering people to take their financial destinies into their own hands, or wrist, in this case.
-              </p>
-            </div>
-        </div>
-      </section>
-        <section id="section-2" class="case-study-section watch-anim-section">
-            <div class="inner-wrapper">
-
-            </div>
-
-            <!-- <dialog>
-                I'm a dialog!
-                <form method="dialog">
-                  <input type="submit" value="Close" />
-                </form>
-              </dialog>
-              <script>
-                var dialog = document.querySelector('dialog');
-                dialogPolyfill.registerDialog(dialog);
-                // Now dialog acts like a native <dialog>.
-                dialog.showModal();
-              </script> -->
-
+        <main class="main empower-case-study">
+          <section id="section-hero" class="section-hero bg-overlay">
+            @@include("../html_partials/sections/hero.html")
           </section>
 
-          <section id="section-3" class="watch-anim-section">
-
-            <div class="watch-anim-wrapper">
-            <div class="watch-anim-text">
-              Working with Empower, we identified four aspects of the Apple Watch app that fits with their mission to keep people actively involved in their retirement accounts.
-
-              <ul id="watch-anim-list" class="watch-anim-list">
-                <li id="face-1-list">
-                  Display a user’s progress toward achieving their retirement income goal
-                </li>
-                <li id="face-2-list">
-                  Show current balances and value of their investments
-                </li>
-                <li id="face-3-list">
-                  Provide simple notifications that users can respond to from the Apple Watch
-                </li>
-                <li id="face-4-list">
-                  Make retirement planning playful by displaying a countdown clock that projects how many days remain to the user’s retirement date
-                </li>
-              </ul>
-            </div>
-
-
-            <div id="watch-anim-image" class="watch-anim-image">
-              <div id="watch-anim-face" class="watch-anim-face face-1">
-              </div>
-            </div>
-          </div>
-
+          <section id="hero-sub-block" class="case-study-section">
+              @@include("../html_partials/sections/secondary.html")
           </section>
 
-          <section id="section-4" class="watch-anim-section">
+          <section id="section-watch-arm" class="case-study-section dark watch-arm full-bleed full-bleed-inset">
+            @@include("../html_partials/sections/watch_arm.html")
+          </section>
+
+          <section id="section-solution" class="case-study-section">
+              @@include("../html_partials/sections/solution.html")
+          </section>
+
+          <section id="watch-anim-section" class="case-study-section watch-anim-section">
+            @@include("../html_partials/sections/watch_anim.html")
+          </section>
+
+          <section id="conclusion" class="case-study-section watch-anim-section">
+            @@include("../html_partials/sections/conclusion.html")
+          </section>
+
+          <section id="section-overlay" class="case-study-section">
+            @@include("../html_partials/sections/overlay.html")
           </section>
 
       </main>
@@ -90,6 +46,7 @@
     (function() {
       "use strict";
       pageFunctions.intialize();
+      // dialogPolyfill.registerDialog(dialog);
     })();
     </script>
 </html>
